@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elegant Static Website</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #1f1f1f;
+      color: white;
+      padding: 20px 50px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-weight: 600;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 300;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #f39c12;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      padding: 80px 50px;
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-box {
+      padding: 30px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+
+    .service-box:hover {
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transform: translateY(-5px);
+    }
+
+    .service-box i {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #f39c12;
+    }
+
+    footer {
+      background: #1f1f1f;
+      color: white;
+      padding: 30px 50px;
+      text-align: center;
+    }
+
+    @media(max-width: 768px) {
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 0 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Himansi Tech</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h2>Innovating with Cloud & DevOps</h2>
+      <p>Delivering scalable, secure, and intelligent cloud solutions.</p>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <h3>About Us</h3>
+    <p>At Himansi Technologies, we transform ideas into digital success through powerful cloud architectures, DevOps automation, and AI-driven innovation. Our team of certified experts helps businesses scale confidently into the future.</p>
+  </section>
+
+  <section id="services" class="section">
+    <h3>Our Services</h3>
+    <div class="services">
+      <div class="service-box">
+        <i class="fas fa-cloud"></i>
+        <h4>AWS Cloud</h4>
+        <p>Cloud-native solutions including EC2, S3, Lambda, and more.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-sync-alt"></i>
+        <h4>DevOps Automation</h4>
+        <p>CI/CD pipelines with Jenkins, GitHub Actions, Argo CD, and Terraform.</p>
+      </div>
+      <div class="service-box">
+        <i class="fas fa-robot"></i>
+        <h4>AI Chatbots</h4>
+        <p>Smart conversational agents using Amazon Lex and Bedrock.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h3>Contact Us</h3>
+    <p>Email: hello@dhyontech.com</p>
+    <p>Location: India | Global Remote Support</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Dhyon Technologies. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
