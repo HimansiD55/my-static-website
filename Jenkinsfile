@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         // Define the deployment path for Nginx
-        DEPLOY_PATH = '/usr/share/nginx/html' // Default Nginx web root on Amazon Linux/RHEL
+        DEPLOY_PATH = '/var/www/html' // Default Nginx web root on Amazon Linux/RHEL
     }
 
     stages {
