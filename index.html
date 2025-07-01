@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Elegant Static Website</title>
+  <title>Elegant Website with Animation</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  
   <style>
     * {
       margin: 0;
@@ -16,8 +24,8 @@
 
     body {
       font-family: 'Poppins', sans-serif;
-      color: #333;
       line-height: 1.6;
+      color: #333;
     }
 
     header {
@@ -25,9 +33,9 @@
       color: white;
       padding: 20px 50px;
       position: fixed;
-      width: 100%;
       top: 0;
-      z-index: 999;
+      width: 100%;
+      z-index: 1000;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -39,10 +47,10 @@
 
     nav a {
       color: white;
-      margin-left: 20px;
       text-decoration: none;
+      margin-left: 20px;
       font-weight: 300;
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -50,29 +58,36 @@
     }
 
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
       height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://source.unsplash.com/1600x900/?technology,cloud') center/cover no-repeat;
+      color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 0 20px;
-      color: white;
     }
 
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 20px;
+      animation: fadeInDown 1.5s ease-out;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      animation: fadeInUp 2s ease-out;
     }
 
     .section {
-      padding: 80px 50px;
+      padding: 100px 50px;
     }
 
     .section h3 {
       font-size: 2rem;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       color: #222;
+      text-align: center;
     }
 
     .services {
@@ -82,44 +97,65 @@
     }
 
     .service-box {
-      padding: 30px;
       background: #f9f9f9;
-      border-radius: 10px;
+      padding: 30px;
+      border-radius: 12px;
       text-align: center;
+      box-shadow: 0 0 0 transparent;
       transition: 0.3s ease;
     }
 
     .service-box:hover {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
       transform: translateY(-5px);
     }
 
     .service-box i {
       font-size: 2.5rem;
-      margin-bottom: 15px;
       color: #f39c12;
+      margin-bottom: 15px;
     }
 
     footer {
       background: #1f1f1f;
       color: white;
-      padding: 30px 50px;
       text-align: center;
+      padding: 30px 50px;
     }
 
-    @media(max-width: 768px) {
-      .hero h2 {
-        font-size: 2.2rem;
-      }
-
+    @media (max-width: 768px) {
       header {
         flex-direction: column;
         align-items: flex-start;
       }
-
       nav a {
-        display: inline-block;
+        display: block;
         margin: 10px 0 0;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
   </style>
@@ -137,46 +173,57 @@
 
   <section class="hero">
     <div>
-      <h2>Innovating with Cloud & DevOps</h2>
-      <p>Delivering scalable, secure, and intelligent cloud solutions.</p>
+      <h2>Building Cloud & DevOps Solutions</h2>
+      <p>Scalable • Secure • Smart</p>
     </div>
   </section>
 
-  <section id="about" class="section">
+  <section id="about" class="section" data-aos="fade-up">
     <h3>About Us</h3>
-    <p>At Himansi Technologies, we transform ideas into digital success through powerful cloud architectures, DevOps automation, and AI-driven innovation. Our team of certified experts helps businesses scale confidently into the future.</p>
+    <p style="text-align:center; max-width: 800px; margin: auto;">
+      At Himansi Technologies, we engineer future-ready infrastructure using AWS Cloud, automation, and AI. Our mission is to help businesses scale smarter, innovate faster, and deliver value continuously.
+    </p>
   </section>
 
   <section id="services" class="section">
-    <h3>Our Services</h3>
+    <h3 data-aos="zoom-in">Our Services</h3>
     <div class="services">
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-right">
         <i class="fas fa-cloud"></i>
         <h4>AWS Cloud</h4>
-        <p>Cloud-native solutions including EC2, S3, Lambda, and more.</p>
+        <p>Deploy cloud-native apps and scalable infrastructure with EC2, S3, Lambda, and more.</p>
       </div>
-      <div class="service-box">
-        <i class="fas fa-sync-alt"></i>
+      <div class="service-box" data-aos="fade-up">
+        <i class="fas fa-cogs"></i>
         <h4>DevOps Automation</h4>
-        <p>CI/CD pipelines with Jenkins, GitHub Actions, Argo CD, and Terraform.</p>
+        <p>CI/CD pipelines with Jenkins, Argo CD, GitHub Actions, Terraform, and more.</p>
       </div>
-      <div class="service-box">
+      <div class="service-box" data-aos="fade-left">
         <i class="fas fa-robot"></i>
-        <h4>AI Chatbots</h4>
-        <p>Smart conversational agents using Amazon Lex and Bedrock.</p>
+        <h4>AI & Chatbots</h4>
+        <p>Conversational experiences using Amazon Lex, Bedrock, and real-time NLP solutions.</p>
       </div>
     </div>
   </section>
 
-  <section id="contact" class="section">
+  <section id="contact" class="section" data-aos="fade-up">
     <h3>Contact Us</h3>
-    <p>Email: hellothis@himansitech.com</p>
-    <p>Location: India | Global Remote Support</p>
+    <p style="text-align:center;">Email: hello@Himansitech.com</p>
+    <p style="text-align:center;">Based in India • Serving Globally</p>
   </section>
 
   <footer>
     <p>&copy; 2025 Himansi Technologies. All rights reserved.</p>
   </footer>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1200,
+      once: true
+    });
+  </script>
 
 </body>
 </html>
